@@ -1,0 +1,12 @@
+div {
+  color: red;
+}
+
+#another {
+  font-size: 40px;
+  color: green;
+}
+.list {
+  border: 8px solid pink;
+  padding: 20px;
+}
