@@ -42,3 +42,17 @@ document.querySelector('.second').addEventListener('hello', function (data) {
 // button.addEventListener('bye', (e) => console.log('test better'))
 // document.addEventListener('bye', (e) => console.log('test document'))
 // document.dispatchEvent(eve)
+
+const doubleButton = document.querySelector('.double')
+function doubleClickFun() {
+  let doubleEvent = new CustomEvent('custom:double', {
+    detail: { hello: 'Double clicked' },
+    bubbles: true,
+  })
+
+  doubleButton.dispatchEvent(doubleEvent)
+  // document.dispatchEvent(doubleEvent)
+}
+doubleButton.addEventListener('click', doubleClickFun)
+doubleButton.addEventListener('custom:double', (e) => console.log(e.detail))
+document.addEventListener('custom:double', (e) => console.log(e.detail))
