@@ -1,0 +1,102 @@
+<template>
+    <div>Hello World, this is {fullName}</div>
+    <div>Using object values, {details.name}</div>
+
+
+    <lightning-card  title="Two way data binding">
+        <!-- <input type="text" onkeyup={changeHandler}/> -->
+         <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Name Please" onkeyup={changeHandler}></lightning-input>
+            <div>Updating the name based no the change in above text box {name}</div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Testing with Object properties">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Object Name change" onkeyup={changeObjectHandler}></lightning-input>
+            <div>Updating the object property, changed value is {address.more.state}</div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Testing Get method">
+        <div class="slds-m-around_medium">
+            <div>Getting the value using get method, first user is {firstUser}</div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Testing directives" icon-name="standard:account" variant="base">
+      <div class="slds-m-around_medium">
+        
+        <template if:true={showData}>
+            <lightning-button 
+            class= 'slds-button slds-m-left_x-small'
+            variant="brand"
+            label="Hide Data" 
+            onclick={handleClick} 
+            ></lightning-button>
+            <div class="slds-m-around_medium">Showing on showData set to true</div>
+        </template>        
+        <template if:false={showData}>
+            <lightning-button 
+            class= 'slds-button slds-m-left_x-small'
+            variant="brand"
+            label="Show Data" 
+            onclick={handleClick} 
+            ></lightning-button>
+            <!-- <div class="slds-s-around_small">Showing on showData set to true</div> -->
+        </template>        
+      </div>
+    </lightning-card>
+    <lightning-card title="forLoop" icon-name="standard:account" variant="base">
+      <div>
+        <template for:each={users} for:item="user" for:index="i">
+            <!-- <div key={user} class="slds-m-around_medium">Showing on showData set to true {user}</div> -->
+
+            <ul key={user} class="slds-list_dotted">
+                <li>User number {i} is {user}</li>
+            </ul>
+        </template>
+      </div>
+    </lightning-card>
+
+    <lightning-card title="Iterator Loop" icon-name="standard:contact" variant="base">
+      <div class="slds-m-around_medium">
+       
+            <ul>
+                <template iterator:it={arrObjs}>
+                    <li key={it.name}> 
+                        <template  lwc:if={it.first}>
+                            <strong>{it.index} {it.value.name}</strong>
+                            {it.value.age} is the first age
+                        </template> 
+
+                        <template lwc:elseif={it.last}>
+                            <strong>{it.index} {it.value.name}</strong>
+                            {it.value.age} is the Last age
+                        </template>
+                        <template lwc:else>
+                            <strong>{it.index} {it.value.name}</strong>
+                            {it.value.age} is the between age
+                        </template>
+                    </li>
+                </template>
+            </ul>
+       
+      </div>
+    </lightning-card>
+
+    <lightning-card title="forLoop on Array of Objects" icon-name="standard:account" variant="base">
+      <div>
+        <template for:each={arrObjs} for:item="arr" for:index="i">
+            <!-- <div key={user} class="slds-m-around_medium">Showing on showData set to true {user}</div> -->
+
+            <ul key={arr.name} class="slds-has-dividers_around">
+                <li class="slds-item">User number {i} is {arr.name} and the age is {arr.age}</li>
+            </ul>
+        </template>
+      </div>
+    </lightning-card>
+
+</template>
+
+        
