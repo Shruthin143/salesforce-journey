@@ -1,0 +1,9 @@
+.external{
+  color: aquamarine;
+  font-size: 30px;
+}
+
+.external:hover{
+  color: brown;
+  font-weight: 200;
+}

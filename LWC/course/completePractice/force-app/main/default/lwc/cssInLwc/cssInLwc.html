@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Inline Styling">
+      <div class="slds-m-around_medium">
+        <div style="color:brown; font-size:20px">Hello I am div tag</div>
+      </div>
+    </lightning-card>
+    <lightning-card title="External Styling">
+      <div class="slds-m-around_medium">
+        <p>Hey I am a P tag</p>
+        <div class="external">Zero to Hero</div>
+      </div>
+    </lightning-card>
+    <lightning-card title="SLDS Styling">
+      <div class="slds-m-around_medium slds-box slds-p-horizontal_medium">
+        <div>Inbuilt inside SF</div>
+        <span class="slds-badge">Badge</span>
+        <span class="slds-badge slds-theme_success">Success</span>
+        <lightning-badge label="Warning" icon-name="utility:success" icon-position="end" icon-alternative-text="Warning badge label"></lightning-badge>
+        <lightning-badge label="Inverse" class="slds-badge_inverse"></lightning-badge>
+        <lightning-badge label="Lightest" class="slds-badge_lightest"></lightning-badge>
+      </div>
+    </lightning-card>
+</template>

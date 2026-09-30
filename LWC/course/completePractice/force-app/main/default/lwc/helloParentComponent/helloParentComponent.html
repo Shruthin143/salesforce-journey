@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Parent Component">
+      <div class="slds-m-around_medium">
+        <h1>Hello from Parent Component</h1>
+        <h1>I am heading</h1>
+        <button onclick={fetchDetailHandler}>Fetch Details</button>
+
+        <template for:each={userNames} for:item="user" for:index="i">
+          <div key={user} class="slds-m-around-medium">
+              <h2>The user added is {user}</h2>
+          </div>
+        </template>
+
+        <div class="child" lwc:dom="manual"></div>
+        <template lwc:if={takeChild}>
+          <c-hello-child-component></c-hello-child-component>
+        </template>
+      </div>
+    </lightning-card>
+</template>

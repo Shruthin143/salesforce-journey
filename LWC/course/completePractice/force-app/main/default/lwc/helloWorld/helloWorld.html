@@ -52,8 +52,8 @@
         <template for:each={users} for:item="user" for:index="i">
             <!-- <div key={user} class="slds-m-around_medium">Showing on showData set to true {user}</div> -->
 
-            <ul key={user} class="slds-list_dotted">
-                <li>User number {i} is {user}</li>
+            <ul class="slds-list_dotted">
+                <li key={user}>User number {i} is {user}</li>
             </ul>
         </template>
       </div>
