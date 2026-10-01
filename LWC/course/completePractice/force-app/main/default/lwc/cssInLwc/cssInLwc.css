@@ -1,3 +1,4 @@
+@import 'c/sharedCss';
 .external{
   color: aquamarine;
   font-size: 30px;
@@ -6,4 +7,13 @@
 .external:hover{
   color: brown;
   font-weight: 200;
+}
+
+.token{
+  color:var(--slds-g-color-neutral-base-10);
+}
+
+lightning-button {
+    --slds-c-button-brand-color-background: red;
+    --slds-c-button-brand-text-color: white;
 }

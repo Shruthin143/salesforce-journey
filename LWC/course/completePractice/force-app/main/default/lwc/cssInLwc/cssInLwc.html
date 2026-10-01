@@ -19,5 +19,46 @@
         <lightning-badge label="Inverse" class="slds-badge_inverse"></lightning-badge>
         <lightning-badge label="Lightest" class="slds-badge_lightest"></lightning-badge>
       </div>
+      <div class="slds-grid slds-gutters slds-m-around_medium">
+        <div class="slds-col slds-size_6-of-12">
+          <span>1</span>
+        </div>
+        <div class="slds-col slds-size_2-of-12">
+          <span>2</span>
+        </div>
+        <div class="slds-col slds-size_2-of-12">
+          <span>3</span>
+        </div>
+        <div class="slds-col slds-size_2-of-12">
+          <span>4</span>
+        </div>
+      </div>
+    </lightning-card>
+    <lightning-card title="Styling using SLDS Tokens">
+      <div class="slds-m-around_medium">
+        <p>Style me through tokens</p>
+        <div class="token">Zero to Hero</div>
+      </div>
+    </lightning-card>
+    <lightning-card title="Styling using Shared CSS file">
+      <div class="slds-m-around_medium">
+        <div class="width-one">80</div>
+      </div>
+      <div class="slds-m-around_medium">
+        <div class="width-two">90</div>
+      </div>
+    </lightning-card>
+    <lightning-card title="Dynamic Styling">
+      <div class="slds-m-around_medium">
+        <lightning-input type="range" name="input3" label="Volume (0-100)" min="0" max="100" value="10" onchange={slideChangehandler}></lightning-input>
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error alertBar" role="alert">
+          Hey I am an Alert!!
+        </div>
+      </div>
+    </lightning-card>
+    <lightning-card title="Shadow Styling">
+      <div class="slds-m-around_medium">
+        <lightning-button label="Testing" title="testing" class="btn"></lightning-button>
+      </div>
     </lightning-card>
 </template>

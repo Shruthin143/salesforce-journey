@@ -1,0 +1,13 @@
+.width-one{
+  width:80%;
+  background-color: blue;
+  text-align: right;
+  color: aliceblue;
+}
+.width-two{
+  width:90%;
+  background-color:brown;
+  text-align: right;
+  color: aliceblue;
+
+}
