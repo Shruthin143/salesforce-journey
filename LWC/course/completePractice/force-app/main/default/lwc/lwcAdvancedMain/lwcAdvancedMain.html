@@ -1,0 +1,12 @@
+<template> 
+  <lightning-card title="Advanced Features">
+    <div class="slds-m-around_medium">
+      <button class="slds-button slds-button_destructive btn" onclick={clickHandler}>Hide Child</button>
+      <h1>The name supplied is {name}</h1>
+    </div>
+    <template  lwc:if ={showComponent}>
+      <c-lwc-advanced-child>        
+      </c-lwc-advanced-child>  
+    </template>
+    </lightning-card>
+</template>
