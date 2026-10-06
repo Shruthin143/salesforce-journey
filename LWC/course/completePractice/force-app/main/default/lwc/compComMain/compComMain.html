@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Parent to Child communication Parent">
+      <div class="slds-form-element slds-m-around_medium">
+        <label class="slds-form-element__label" for="text-input-id-49">What is the message</label>
+        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+          <input id="text-input-id-49" placeholder="type here" type="text" class="slds-input" onkeyup={messageHandler} />
+        </div>
+      </div>
+      <lightning-button variant="brand" label="Call Child Method" title="Primary action" onclick={callChildMethod} class="slds-m-left_x-small"></lightning-button>
+      <c-comp-com-child message={parentMessage} complex={complexData} onhello={parentHelloHandler}></c-comp-com-child>
+
+
+    </lightning-card>
+</template>

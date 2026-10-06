@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Parent to Child communication child, Primitve">
+      <div class="slds-m-around_medium slds-notify_alert slds-alert_error">
+          <h1>Hurray!! I got the data, {message}</h1>
+      </div>
+
+    </lightning-card>
+    <lightning-card title="Parent to Child communication child, Non-Primitve">
+      <template for:each={complex} for:item="person">
+        <div key={person.name} class="slds-m-around_medium slds-notify_alert slds-alert_error" role="alert">
+            <div class="slds-m-around_medium">
+                <h1>Hurray!! I got the data, {person.name} and age is {person.age}</h1>
+            </div>
+        </div>
+      </template>
+
+    </lightning-card>
+    <lightning-card title="Parent to Child communication, calling Child method from Parent">    
+
+    </lightning-card>
+    <lightning-card title="Chile to Parent communication, using event">    
+      <lightning-button variant="brand" label="Hello Event" title="Primary action" onclick={helloHandle} class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+</template>
