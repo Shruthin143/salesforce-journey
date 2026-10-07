@@ -1,0 +1,39 @@
+<template>
+        <lightning-card variant="standard" icon-name="custom:custom63" title="Reusable Component Demo">
+          <c-custom-lightning-card>
+            <h1 slot="title">This is the title</h1>
+            <p slot="body">This is the body</p>
+            <div slot="action">
+              <lightning-button-icon icon-name="utility:down"></lightning-button-icon>
+            </div>
+            <div slot="footer">
+              <h6>This is the footer</h6>
+            </div>
+          </c-custom-lightning-card>
+        </lightning-card>
+        <lightning-card variant="standard" icon-name="custom:custom63" title="Reusable Component Demo">
+          <c-custom-lightning-card>
+            <h1 slot="title">This is without Action</h1>
+            <p slot="body">This is the body</p>
+            <div slot="footer">
+              <h6>This is the footer</h6>
+            </div>
+          </c-custom-lightning-card>
+        </lightning-card>
+        <lightning-card variant="standard" icon-name="custom:custom63" title="Reusable Component Demo">
+          <c-custom-lightning-card>
+            <h1 slot="title">This card is without footer</h1>
+            <p slot="body">This is the body</p>
+            <div slot="action">
+              <lightning-button-icon icon-name="utility:down"></lightning-button-icon>
+            </div>
+
+          </c-custom-lightning-card>
+        </lightning-card>
+        <lightning-card variant="standard" icon-name="custom:custom63" title="Reusable Component Demo">
+          <c-custom-lightning-card>
+            <h1 slot="title">This card is without any of the rest</h1>
+
+          </c-custom-lightning-card>
+        </lightning-card>
+</template>

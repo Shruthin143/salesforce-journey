@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Unit Eleven Parent Component" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <input type="text" class="textField" onchange={handleInputChange}></input>
+        </div>
+        <div class="slds-m-around_medium">
+            <c-unit-eleven-child detail={parentValue}>
+                <p>This is sent to unnamed slot from parent comp</p>
+                <template for:each={users} for:item="user">
+                    <div key={user}>
+                        <p class="slds-text-color_error" slot="question">What is your name</p>
+                        <p class="slds-text-color_success" slot="answer">My name is {user}</p>
+                    </div>
+                </template>
+                
+                <p slot="footer">
+                    This is the footer content passed from parent using footer slot.
+                </p>
+            </c-unit-eleven-child>
+            <!-- <c-unit-eleven-child name="India"></c-unit-eleven-child> -->
+        </div>
+
+    </lightning-card>
+    <lightning-card title="Unit Eleven Parent Component" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <c-unit-eleven-child detail={parentValue}>
+                <template for:each={users} for:item="user">
+                    <div key={user}>
+                        <p class="slds-text-color_error" slot="question">What is your name</p>
+                        <p class="slds-text-color_success" slot="answer">My name is {user}</p>
+                    </div>
+                </template>
+            </c-unit-eleven-child>
+        </div>
+
+    </lightning-card>  
+
+    
+</template>

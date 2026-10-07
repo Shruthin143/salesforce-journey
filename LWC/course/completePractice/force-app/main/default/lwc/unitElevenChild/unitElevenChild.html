@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Unit Eleven Child Component" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <p>This is the child component, {detail.name}, age is {detail.age} and place is {detail.place} </p>
+        </div>
+
+    </lightning-card>
+    <lightning-card title="Slots" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <slot></slot>
+            <div class="slds-m-around_medium">
+                <slot name="question"></slot>
+                <slot name="answer"></slot>
+            </div>
+            <footer class="slds-card__footer  slds-hide">
+                <slot name="footer" onslotchange={onChangeHandler}></slot>
+            </footer>
+        </div>
+    </lightning-card>
+
+</template>
