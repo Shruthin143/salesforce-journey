@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" >
+  <aura:attribute name="message" type="String" default="No message yet"/>
+  <lightning:card title="Aura LWC Communication" iconName="custom:custom63">
+    <div class="slds-p-around_medium">
+      <c:lwcAuraCommunication title="Message passed from Aura to Lwc" onmessage="{!c.handleMessage}"></c:lwcAuraCommunication>
+    </div>
+    <div class="slds-p-around_medium">
+      <p> {!v.message}</p>
+    </div>
+  </lightning:card>
+
+</aura:component>
