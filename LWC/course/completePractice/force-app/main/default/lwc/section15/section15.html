@@ -1,13 +1,56 @@
 <template>
-    <lightning-card title="Section 15" icon-name="custom:custom63" class="slds-m-around_medium">
-        <div class="slds-p-horizontal_small">
+    <lightning-card title="Section 15" icon-name="custom:custom63">
+        <div class="slds-p-around_small">
             <h1><strong>Static Resource</strong></h1>
             <img src={userImage} alt="userImage" height="50" width="50" class="slds-m-around_medium" />
         </div>
 
-        <div class="slds-p-horizontal_small">
-            <h1><strong>Static Resource Moment</strong></h1>
+        <div class="slds-p-around_small">
+            <h1><strong>Third Party JS Library</strong></h1>
             <h1>Current date is {currentDate}</h1>
         </div>
+        <div class="slds-p-around_small">
+            <h1><strong>Third Party Css</strong></h1>
+            <h1 class="animate__animated animate__bounce animate__delay-2s">An animated element</h1>
+        </div>
+        <div class="slds-p-around_small">
+            <h1><strong>Content AssetFiles</strong></h1>
+            <a href={file} download>Download File</a>
+        </div>
+        <div class="slds-p-around_small">
+            <h1><strong>Internationalization</strong></h1>
+            <h1>Formatted number is {formattedNumber}</h1>
+        </div>
+        <div class="slds-p-around_small">
+            <h1><strong>Custom Labels</strong></h1>
+            <h1>Custom Label Value is {labels.descOne}</h1>
+        </div>
+        <div class="slds-p-around_small">
+            <h1><strong>User Permission Demo</strong></h1>
+            <h1>Has View all data permission: {hasViewAllDataAvailable}</h1>
+            <h1>Has Custom permission: {customPermissionStatus}</h1>
+        </div>
+        <div class="slds-p-around_small">
+            <h1><strong>Form Factor Demo</strong></h1>
+            <h1>Form factor is: {formFactor}</h1>
+        </div>
+        <div class="slds-p-around_small">
+            <h1><strong>User Information Demo</strong></h1>
+            <h1>User ID is: {userId}</h1>
+            <h1>Is it guest user: {userIsGuest}</h1>
+        </div>
+        
+        <div class="slds-p-around_small">
+            <h1><strong>Toast Message Demo</strong></h1>
+            <lightning-button label="Show Toast" onclick={successToastHandler} class="slds-m-around_medium"></lightning-button>
+        </div>
+
+        <template if:true={recordId}>
+            <div class="slds-p-around_small">
+                <h1><strong>Record and Object Names Demo</strong></h1>
+                <h1>Id of this record is: {recordId}</h1>
+                <h1>Object name of this record is: {objectApiName}</h1>
+            </div>
+        </template>
     </lightning-card>
 </template>
