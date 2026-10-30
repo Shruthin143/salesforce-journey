@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 import {loadStyle} from 'lightning/platformResourceLoader'
 import fontawesome from '@salesforce/resourceUrl/fontawesome'
 export default class MemoryGameLwc extends LightningElement {
-
+//test comments
     isLibLoaded = false
     openedCards =[]
     matchedCard=[]
