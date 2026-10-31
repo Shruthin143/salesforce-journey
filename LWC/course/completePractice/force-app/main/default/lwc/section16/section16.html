@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Section 16" icon-name="custom:custom63">
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to Home</strong></h1>
+        <lightning-button label="Home" variant="brand" onclick={navigateToHome}></lightning-button>
+      </div>
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to Chatter</strong></h1>
+        <lightning-button label="Chatter" variant="brand" onclick={navigateToChatter}></lightning-button>
+      </div>
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to Record</strong></h1>
+        <lightning-button label="New Contact" variant="brand" onclick={navigateToNewRecord}></lightning-button>
+      </div>
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to Record with default values</strong></h1>
+        <lightning-button label="New Contact Defaults" variant="brand" onclick={navigateToNewRecordWithDefaults}></lightning-button>
+      </div>
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to List View</strong></h1>
+        <lightning-button label="Contacts List" variant="brand" onclick={navigateToContactsList}></lightning-button>
+      </div>
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to Files</strong></h1>
+        <lightning-button label="Files" variant="brand" onclick={navigateToFiles}></lightning-button>
+      </div>
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to Contact Record</strong></h1>
+        <lightning-button label="Contact Record" variant="brand" onclick={navigateToRecord}></lightning-button>
+      </div>
+      <div class="slds-p-top_medium">
+        <h1><strong>Navigate to Tab</strong></h1>
+        <lightning-button label="Open Tab" variant="brand" onclick={navigateToTab}></lightning-button>
+      </div>
+    </lightning-card>
+    <div class="slds-p-top_medium">
+      <h1><strong>Navigate to Webpage</strong></h1>
+      <lightning-button label="Webpage" variant="brand" onclick={navigateToWebpage}></lightning-button>
+    </div>
+    <div class="slds-p-top_medium">
+      <h1><strong>Navigate to LWC Page</strong></h1>
+      <lightning-button label="LWC Page" variant="brand" onclick={navigateToLWCPage}></lightning-button>
+    </div>
+    <div class="slds-p-top_medium">
+      <h1><strong>Navigate to Aura Component</strong></h1>
+      <lightning-button label="Aura Component" variant="brand" onclick={navigateToAuraComponent}></lightning-button>
+    </div>
+    <div class="slds-p-top_medium">
+      <h1><strong>Getting the current page reference</strong></h1>
+      <p>{currPageRef}</p>
+    </div>
+</template>
