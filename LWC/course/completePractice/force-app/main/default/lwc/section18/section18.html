@@ -1,0 +1,136 @@
+<template>
+    <lightning-card title="Section 18">
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Record-Form Demo</strong></p>
+        <lightning-record-form
+            object-api-name={objectName}
+            fields={fieldList}
+            onsuccess={successHandler}
+            >
+        </lightning-record-form>
+      </div>
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Record-Form Edit Demo</strong></p>
+        <lightning-record-form
+            record-id={recordId}
+            object-api-name={objectName}
+            fields={fieldList}
+            >
+        </lightning-record-form>
+      </div>
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Record-Form Read Only Demo</strong></p>
+        <lightning-record-form
+            record-id={recordId}
+            object-api-name={objectName}
+            fields={fieldList}
+            mode="readonly"
+            >
+        </lightning-record-form>
+      </div>
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Record-Form Edit Demo with columns</strong></p>
+        <lightning-record-form
+            record-id={recordId}
+            object-api-name={objectName}
+            fields={fieldList}
+            mode="edit"
+            columns="2"
+            >
+        </lightning-record-form>
+      </div>
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Lightning Record-View-Form</strong></p>
+        <lightning-record-view-form
+            record-id={recordId}
+            object-api-name={objectName}
+            >
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-output-field field-name="Name"></lightning-output-field>
+                <lightning-output-field field-name="Phone"></lightning-output-field>
+                <lightning-output-field field-name="Rating"></lightning-output-field>
+              </div>
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-output-field field-name="Website"></lightning-output-field>
+                <lightning-output-field field-name="NumberOfEmployees"></lightning-output-field>
+                <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+              </div>
+            </div>
+        </lightning-record-view-form>
+      </div>
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Lightning Record-Edit-Form:  For creating new record and Custom Label Demo</strong></p>
+        <lightning-record-edit-form
+            object-api-name={objectName}
+            >
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="Phone"></lightning-input-field>
+                <label class="slds-p-left_x-small">Enter the Rating</label>
+                <lightning-input-field variant="label-hidden" field-name="Rating"></lightning-input-field>
+              </div>
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-input-field field-name="Website"></lightning-input-field>
+                <lightning-input-field field-name="NumberOfEmployees"></lightning-input-field>
+                <lightning-input-field field-name="AnnualRevenue"></lightning-input-field>
+              </div>
+            </div>
+
+            <lightning-button class="slds-m-around_small" variant="brand" label="Cancel" onclick={handleReset}></lightning-button>
+            <lightning-button class="slds-m-around_small" variant="brand" type="submit" label="Save"></lightning-button>
+        </lightning-record-edit-form>
+      </div>
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Lightning Record-Edit-Form - For updating existing record</strong></p>
+        <lightning-record-edit-form
+            record-id={recordId}
+            object-api-name={objectName}
+            >
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="Phone"></lightning-input-field>
+                <lightning-input-field field-name="Rating"></lightning-input-field>
+              </div>
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-input-field field-name="Website"></lightning-input-field>
+                <lightning-input-field field-name="NumberOfEmployees"></lightning-input-field>
+                <lightning-input-field field-name="AnnualRevenue"></lightning-input-field>
+              </div>
+            </div>
+
+            <lightning-button class="slds-m-around_small" variant="brand" label="Cancel" onclick={handleReset}></lightning-button>
+            <lightning-button class="slds-m-around_small" variant="brand" type="submit" label="Save"></lightning-button>
+        </lightning-record-edit-form>
+      </div>
+      <div class="slds-m-around_medium">
+        <p class="slds-p-around_small"><strong>Lightning Record-Edit-Form - Custom Validation in lightning record edit form</strong></p>
+        <lightning-record-edit-form
+            record-id={recordId}
+            object-api-name={objectName}
+            onsubmit = {handleSubmitValidation}
+            >
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="Phone"></lightning-input-field>
+                <lightning-input-field field-name="Rating"></lightning-input-field>
+              </div>
+              <div class="slds-col slds-size_6-of-12">
+                <lightning-input-field field-name="Website"></lightning-input-field>
+                <lightning-input-field field-name="AnnualRevenue"></lightning-input-field>
+                <lightning-input name="NumberOfEmployees" type= 'number' label="NumberOfEmployees" value={inputValue} onchange={handleNumberOfEmployeesChange}></lightning-input>
+              </div>
+            </div>
+
+            <lightning-button class="slds-m-around_small" variant="brand" label="Cancel" onclick={handleReset}></lightning-button>
+            <lightning-button class="slds-m-around_small" variant="brand" label="Save" type = submit></lightning-button>
+        </lightning-record-edit-form>
+      </div>
+    </lightning-card>
+</template>
