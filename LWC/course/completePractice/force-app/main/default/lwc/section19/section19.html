@@ -1,0 +1,65 @@
+<template>
+  <lightning-card title="Section 19 LDS Wire Service" icon-name="custom:custom63">
+
+    <lightning-card title="Wire service as property">
+      <div class="slds-m-around_medium">
+        <template if:true={userRecord.data}>
+          <h1>Name: {userRecord.data.fields.Name.value}</h1>
+          <h1>Email: {userRecord.data.fields.Email.value}</h1>
+          <p>{userId}</p>
+        </template>
+      </div>
+    </lightning-card>
+    <lightning-card title="Wire service as function">
+      <div class="slds-m-around_medium">
+        <template if:true={userInfo}>
+          <h1>Name: {userInfo.Name.value}</h1>
+          <h1>Email: {userInfo.Email.value}</h1>
+          <p>{userId}</p>
+        </template>
+      </div>
+    </lightning-card>
+    <lightning-card title="Wire service with ObjectInfo">
+      <div class="slds-m-around_medium">
+        <template if:true={accountInfo}>
+          <h1>Object Label: {accountInfo.label}</h1>
+          <h1>Object API Name: {accountInfo.apiName}</h1>
+          <h1>Record type Id: {accountInfo.defaultRecordTypeId}</h1>
+        </template>
+      </div>
+    </lightning-card>
+    <lightning-card title="Wire service with ObjectInfos - more than 1 object">
+      <div class="slds-m-around_medium">
+        <template if:true={objectsInfo}>
+          <h1>Objects-AccountInfo: {objectsInfoAccount.label}</h1>
+          <h1>Objects-OpportunityInfo: {objectsInfoOpportunity.label}</h1>
+        </template>
+      </div>
+    </lightning-card>
+    <lightning-card title="Wire service with Picklistvalues">
+      <div class="slds-m-around_medium">
+        <template if:true={picklistValues}>
+          <h1>Account Rating Picklist Values: </h1>
+          <template for:each={picklistValues} for:item="item">
+            <p key={item.value}>{item.label}</p>
+          </template>
+        </template>
+      </div>
+    </lightning-card>
+    <lightning-card title="Wire service with ALL picklistValuesByRecordType">
+      <div class="slds-m-around_medium">
+        <template if:true={picklistValuesByRecordType}>
+          <lightning-combobox
+            name="Rating"
+            label="Rating"
+            value={picklistValuesByRecordTypeValue}
+            placeholder="Select Rating"
+            options={ratingOptions}
+            onchange={picklistValuesByRecordTypeChangeHandler} ></lightning-combobox>
+
+            <p>Selected value is: {picklistValuesByRecordTypeValue}</p>
+        </template>
+      </div>
+    </lightning-card>
+  </lightning-card>
+</template>

@@ -1,0 +1,36 @@
+<template>
+  <lightning-card title="Section 19 Part2 LDS Wire Service" icon-name="custom:custom63">
+      <lightning-card title="getRecord, getFieldValue, getFieldDisplayValue adapter Demo">
+        <template if:true={getRecordInfo}>
+          <p class="slds-p-horizontal_small">
+            <b>Id:</b> {getRecordInfo.id}
+          </p>
+          <p class="slds-p-horizontal_small">
+            <b>Name:</b> {getRecordInfo.fields.Name.value}
+            <b>Name Value:</b> {nameValue}
+            <b>Name Display Value:</b> {nameDisplayValue}
+          </p>
+          <p class="slds-p-horizontal_small">
+            <b>Industry:</b> {getRecordInfo.fields.Industry.value}
+            <b>Industry Value:</b> {industryValue}
+            <b>Industry Display Value:</b> {industryDisplayValue}
+          </p>
+        </template>
+      </lightning-card>
+      <lightning-card title="getListUI adapter Demo">
+        <template if:true={listUi}>
+          <p class="slds-p-horizontal_small">
+            <!-- <b>List Size:</b> {listUi.records.pageSize} -->
+          </p>
+          <div style="height: 300px;">
+              <lightning-datatable
+                      key-field="id"
+                      data={listUiData}
+                      columns={listUiColumns}>
+              </lightning-datatable>
+          </div>
+        </template>
+        
+      </lightning-card>
+  </lightning-card>
+</template>
