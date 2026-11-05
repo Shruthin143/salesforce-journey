@@ -32,5 +32,52 @@
         </template>
         
       </lightning-card>
+      <lightning-card title="getNavItems adapter Demo">
+        <template if:true={getNavItemValue}>
+          <p class="slds-p-horizontal_small">
+            <b>Next page url</b>: {getNavItemValue.nextPageUrl}
+          </p>
+
+        </template>
+        
+      </lightning-card>
+      <lightning-card title="getRecordUi adapter Demo">
+        <template if:true={getRecordUiValue}>
+          <p class="slds-p-horizontal_small">
+            <template for:each={getRecordUiFields} for:item="item">
+              <p key={item.fieldApiName}>
+                <b>{item.fieldName}</b>: {item.value}
+              </p>
+            </template>
+          </p>
+        </template>        
+      </lightning-card>
+      <lightning-card title="createRecord function Demo">
+        <template if:true={getRecordUiValue}>
+          <div class="slds-p-around_medium">
+            <form class="createForm">
+              <lightning-input label="First Name" name="FirstName" onchange={changeHandler} class="slds-m-bottom_small"></lightning-input>
+              <lightning-input label="Last Name" name="LastName" onchange={changeHandler} class="slds-m-bottom_small"></lightning-input>
+              <lightning-input label="Phone" name="Phone" onchange={changeHandler} class="slds-m-bottom_small"></lightning-input>
+              <lightning-input label="Email" name="Email" type="email" onchange={changeHandler} class="slds-m-bottom_small"></lightning-input>
+              <lightning-button variant="brand" label="Create Contact" onclick={createContact}></lightning-button>
+            </form>
+          </div>
+        </template>        
+      </lightning-card>
+      <lightning-card title="updateRecord function Demo">
+        <template if:true={updateList}>
+          <div style="height: 300px;">
+          <lightning-datatable
+                  key-field="id"
+                  data={contacts}
+                  columns={columns}
+                  draft-values="{draftValues}"
+                  onsave="{handleSave}"
+                  hide-checkbox-column>
+          </lightning-datatable>
+        </div>
+        </template>        
+      </lightning-card>
   </lightning-card>
 </template>
