@@ -200,5 +200,7 @@ export default class Section19Part2 extends LightningElement {
 
   handleSave(event){
     console.log(event.detail)
+    
+    updateRecord()
   }
 }

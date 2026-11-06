@@ -1,0 +1,67 @@
+<template>
+  <lightning-card title="Section 20 Apex in Lwc" icon-name="custom:custom63">
+      <lightning-card title="Importing Apex Methods using @wire to property">
+        <!-- <template if:true={accounts}>
+          <template for:each={accounts} for:item="account">
+            <p key={account.Id} class="slds-p-horizontal_small">
+              {account.Name}
+            </p>
+          </template>
+        </template> -->
+      </lightning-card>
+      <lightning-card title="Importing Apex Methods using @wire to function">
+        <template if:true={accountFromFunction}>
+          <template for:each={accountFromFunction} for:item="account">
+            <p key={account.Id} class="slds-p-horizontal_small">
+              {account.Name}
+            </p>
+          </template>
+        </template>
+      </lightning-card>
+      <lightning-card title="Apex Methods @wire with function Params">
+        <lightning-combobox
+          label="Select Industry"
+          options={industryOptions}
+          value={selectedIndustry}
+          onchange={handleIndustryChange}
+        ></lightning-combobox>
+        <template if:true={accountsWithParams}>
+          <template for:each={accountsWithParams} for:item="account">
+            <p key={account.Id} class="slds-p-horizontal_small">
+              {account.Name}
+            </p>
+          </template>
+        </template>
+      </lightning-card>
+      <lightning-card title="Apex Methods Imperatively">
+        <lightning-button variant="brand" label="Call Account method" onclick={handleClick} class="slds-m-around_medium">
+        </lightning-button>
+        <template if:true={imperativeAccounts}>
+          <template for:each={imperativeAccounts} for:item="account">
+            <p key={account.Id} class="slds-p-horizontal_small">
+              {account.Name}
+            </p>
+          </template>
+        </template>
+      </lightning-card>
+      <lightning-card title="Apex Methods Imperatively Params">
+        <lightning-combobox
+          label="Select Industry"
+          options={industryOptions}
+          value={searchKey}
+          onchange={handleSearchKeyChange}
+        ></lightning-combobox>
+        <div class="slds-m-around_medium">
+          <lightning-button variant="brand" label="Call Account method" onclick={handleClickParams} class="slds-m-around_medium">
+          </lightning-button>
+        </div>
+        <template if:true={imperativeAccountsParams}>
+          <template for:each={imperativeAccountsParams} for:item="account">
+            <p key={account.Id} class="slds-p-horizontal_small">
+              {account.Name}
+            </p>
+          </template>
+        </template>
+      </lightning-card>
+  </lightning-card>
+</template>
