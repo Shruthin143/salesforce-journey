@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Section 21 Books App" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <p>List of books</p>
+            <lightning-input type="text" label="Search" value={query} onchange={handleSearchKeyChange}></lightning-input>
+            <lightning-button label="Click Me" onclick={fetchFunHandler}></lightning-button>
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+            <template if:true={booksList}>
+                <div style="height: 300px;">
+                <lightning-datatable
+                    key-field="id"
+                    data={booksList}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    onsort={handleSort}
+                    sorted-by={sortedBy}
+                    sorted-direction={sortedDirection}>
+                </lightning-datatable>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
