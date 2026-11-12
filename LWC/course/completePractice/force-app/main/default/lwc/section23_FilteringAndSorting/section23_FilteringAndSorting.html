@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="Section 23 Filtering and Sorting" icon-name="custom:custom63">
+    <div class="slds-p-around_medium">
+      <lightning-input label="Search" placeholder="Search..." onchange={handleSearchChange}></lightning-input>
+      <lightning-button label="Filter" onclick={handleFilterChange} class="slds-m-left_small"></lightning-button>
+    </div>
+    <div class="slds-p-around_medium">
+      <template if:true={fullTableData}>
+        <lightning-datatable
+            columns={headings}
+            data={filteredData}
+            key-field="Id"
+        >
+        </lightning-datatable>
+    </template>
+    </div>
+  </lightning-card>    
+</template>

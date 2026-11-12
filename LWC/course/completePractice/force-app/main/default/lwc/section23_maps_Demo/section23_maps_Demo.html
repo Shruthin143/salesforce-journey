@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Section 23: Map Demo" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+          <h1>Map comes here</h1>
+          <template if:true={mapMarkers.length}>
+            <lightning-map
+                map-markers={mapMarkers}
+                markers-title={markersTitle}
+                onmarkerselect={callmarkerHandler}
+                selected-marker-value={selectedMarkerValue}
+                zoom-level="2"
+                show-footer
+            ></lightning-map>
+          </template>
+          <template if:false={mapMarkers.length}>
+            <p>No markers to display</p>
+          </template>
+        </div>
+    </lightning-card>
+</template>
